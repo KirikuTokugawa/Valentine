@@ -177,12 +177,7 @@ export default function App() {
                 </div>
 
                 <div className="flex items-center gap-4">
-                    <button
-                        onClick={() => setSoundOn(!soundOn)}
-                        className="p-2 hover:bg-white/10 rounded-full transition-colors"
-                    >
-                        {soundOn ? <Volume2 className="w-5 h-5" /> : <VolumeX className="w-5 h-5" />}
-                    </button>
+
 
                     {/* Theme Toggle */}
                     <div className="flex items-center bg-black/30 rounded-full p-1 cursor-pointer border border-white/10" onClick={() => setTheme(prev => prev === 'sweet' ? 'spicy' : 'sweet')}>
@@ -292,10 +287,7 @@ export default function App() {
                                 {text.successBody}
                             </p>
                             <div className="flex justify-center gap-2">
-                                <button className="px-6 py-2 bg-white/10 rounded-lg hover:bg-white/20 transition text-sm">
-                                    Screenshot This 📸
-                                </button>
-                                <button onClick={handleReset} className="px-6 py-2 bg-white/10 rounded-lg hover:bg-white/20 transition text-sm text-white/50">
+                                <button onClick={handleReset} className="px-14 py-3 bg-white/10 rounded-lg hover:bg-white/20 transition text-lg text-white/50">
                                     Replay
                                 </button>
                             </div>
