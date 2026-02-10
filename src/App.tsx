@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Heart, Flame, X, Volume2, VolumeX, AlertCircle } from 'lucide-react';
 
 // --- Types ---
@@ -92,6 +92,14 @@ export default function App() {
     const [soundOn, setSoundOn] = useState(true);
 
     const containerRef = useRef<HTMLDivElement>(null);
+
+    // --- PASTE THIS BLOCK HERE ---
+    useEffect(() => {
+        setAccepted(false);  // This resets the "Success" screen back to the question
+        setNoCount(0);
+        setNoBtnPos({ x: 0, y: 0 });
+    }, [theme]); 
+    // 
 
     // --- 1. Audio Reference ---
     const audioRef = useRef<HTMLAudioElement>(null);
@@ -295,7 +303,7 @@ export default function App() {
                                 {text.successBody}
                             </p>
                             <div className="flex justify-center gap-2">
-                                <button onClick={handleReset} className="px-14 py-3 bg-white/10 rounded-lg hover:bg-white/20 transition text-lg text-white/50">
+                                <button onClick={handleReset} className="px-14 py-3 bg-white/20 rounded-lg hover:bg-white/20 transition text-lg text-white/80">
                                     Replay
                                 </button>
                             </div>
