@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'; // Added useEffect back so your mute works!
+import { useState, useRef } from 'react';
 import { Heart, Flame, X, Volume2, VolumeX, AlertCircle } from 'lucide-react';
 
 // --- Types ---
