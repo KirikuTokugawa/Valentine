@@ -296,8 +296,16 @@ export default function App() {
                         </div>
 
                         <div className="bg-black/30 backdrop-blur-xl p-8 rounded-3xl border border-white/10 shadow-2xl">
-                            <h1 className="text-4xl font-black mb-4 text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-white">
-                                {text.successTitle}
+                            <h1 className="text-4xl font-black mb-4">
+                                {/* 1. The Gradient Text (Stays Pink/White) */}
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-white">
+                                    {text.successTitle.replace('😎', '').replace('❤️', '')}
+                                </span>
+
+                                {/* 2. The Emoji (Keeps its real colors) */}
+                                <span className="not-italic inline-block ml-2 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">
+                                    {theme === 'sweet' ? '❤️' : '😎'}
+                                </span>
                             </h1>
                             <p className="text-xl text-white/90 leading-relaxed mb-8">
                                 {text.successBody}
