@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Heart, Flame, X, Check, Lock, Unlock, Music, Volume2, VolumeX, Sparkles, AlertCircle } from 'lucide-react';
+import { useState, useRef } from 'react'; // Added useEffect back so your mute works!
+import { Heart, Flame, X, Volume2, VolumeX, AlertCircle } from 'lucide-react';
 
 // --- Types ---
 type Theme = 'sweet' | 'spicy';
@@ -83,7 +83,6 @@ export default function App() {
     const [accepted, setAccepted] = useState(false);
     const [noCount, setNoCount] = useState(0);
     const [noBtnPos, setNoBtnPos] = useState({ x: 0, y: 0 });
-    const [isHoveringNo, setIsHoveringNo] = useState(false);
     const [showTerms, setShowTerms] = useState(false);
 
     // Audio state (simulated visuals since we can't auto-play real audio easily without interaction)
@@ -111,11 +110,6 @@ export default function App() {
         const y = Math.random() * 200 - 100;
         setNoBtnPos({ x, y });
         setNoCount(prev => prev + 1);
-    };
-
-    const handleNoHover = () => {
-        setIsHoveringNo(true);
-        moveNoButton();
     };
 
     const handleReset = () => {
@@ -248,8 +242,7 @@ export default function App() {
                                         transition: 'all 0.2s ease-out'
                                     }}
                                 >
-                                    <button
-                                        onMouseEnter={handleNoHover}
+                                    <button 
                                         onClick={moveNoButton}
                                         onTouchStart={moveNoButton} // For mobile fun
                                         className="w-full md:w-auto px-8 py-4 bg-gray-800/50 hover:bg-gray-800 backdrop-blur-md border border-white/10 rounded-xl font-medium text-white/80 transition-colors whitespace-nowrap"
