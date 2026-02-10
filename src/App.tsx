@@ -21,7 +21,10 @@ const COPY = {
             "Bawal ngaaa",
             "Iiyak ako 😥",
             "Last chance!",
-            "Grabe, ang tigas ng ulo mo"
+            "Grabe, ang tigas ng ulo mo",
+            "Sinasadya mo na e",
+            "Maawa ka sa button",
+            "Mag Yes kana! 😭 ",
         ]
     },
     spicy: {
@@ -177,7 +180,12 @@ export default function App() {
                 </div>
 
                 <div className="flex items-center gap-4">
-
+                    <button
+                        onClick={() => setSoundOn(!soundOn)}
+                        className="hidden" 
+                    >
+                        {soundOn ? <Volume2 className="w-5 h-5" /> : <VolumeX className="w-5 h-5" />}
+                    </button>
 
                     {/* Theme Toggle */}
                     <div className="flex items-center bg-black/30 rounded-full p-1 cursor-pointer border border-white/10" onClick={() => setTheme(prev => prev === 'sweet' ? 'spicy' : 'sweet')}>
