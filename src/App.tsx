@@ -268,7 +268,7 @@ export default function App() {
                         <div className="mt-8 text-center">
                             <button
                                 onClick={() => setShowTerms(true)}
-                                className="text-xs text-white/30 hover:text-white/60 underline decoration-dotted transition-colors"
+                                className="text-xs text-white/50 hover:text-white/60 underline decoration-dotted transition-colors"
                             >
                                 *Terms and conditions apply
                             </button>
