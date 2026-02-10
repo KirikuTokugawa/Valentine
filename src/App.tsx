@@ -33,7 +33,7 @@ const COPY = {
         question: "Feeling daring today?",
         yesBtn: "Yes, let's do it! 😏",
         noBtn: "Maybe later",
-        successTitle: "Yes! I knew you’d say yes 😎",
+        successTitle: "Yes! I knew you’d say yes😎",
         successBody: "I might be busy with review, but spending time with you sounds way more fun.",
         noMessages: [
             "Playing hard to get, huh?",
